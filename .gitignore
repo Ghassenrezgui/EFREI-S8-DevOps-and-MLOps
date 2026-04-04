@@ -1,0 +1,54 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Data (re-downloadable)
+*.csv
+*.xlsx
+!data/**/*.csv
+!data/**/*.xlsx
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+docker-compose.override.yml
+
+# Env
+.env
+.env.local
+
+# ML models (too large for git)
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.pth
+saved_models/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
