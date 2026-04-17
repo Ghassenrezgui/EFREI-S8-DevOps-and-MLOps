@@ -1,7 +1,5 @@
 # TP1 - Docker
 
-This project is now mine.
-
 ## Structure
 
 - `backend/` - Java backend application
