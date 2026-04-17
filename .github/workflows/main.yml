@@ -51,3 +51,6 @@ jobs:
           context: ./TPs/TP1/httpd
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/master' }}
+
+      - name: Build and test with Maven
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=YOUR_PROJECT_KEY -Dsonar.organization=YOUR_ORG -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./TPs/TP1/simple-api/pom.xml
