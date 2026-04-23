@@ -45,6 +45,12 @@ jobs:
           context: ./TPs/TP1/httpd
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/master' }}
+      - name: Build image and push front
+        uses: docker/build-push-action@v6
+        with:
+          context: ./TPs/TP1/front
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-front:latest
+          push: ${{ github.ref == 'refs/heads/master' }}
 
   sonar-analysis:
     needs: test-backend
