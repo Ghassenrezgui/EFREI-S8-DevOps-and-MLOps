@@ -5,9 +5,9 @@
     networks:
       - name: app-network
     env:
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://my-database:5432/db"
-      SPRING_DATASOURCE_USERNAME: usr
-      SPRING_DATASOURCE_PASSWORD: pwd
+      SPRING_DATASOURCE_URL: "{{ vault_datasource_url }}"
+      SPRING_DATASOURCE_USERNAME: "{{ vault_postgres_user }}"
+      SPRING_DATASOURCE_PASSWORD: "{{ vault_postgres_password }}"
     pull: true
     recreate: true
   vars:
