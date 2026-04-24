@@ -27,5 +27,7 @@ jobs:
 
       - name: Run Ansible playbook
         run: |
-          cd TPs/TP1/ansible
-          ansible-playbook -i inventories/setup.yml playbook.yml
+            cd TPs/TP1/ansible
+            echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > /tmp/vault_pass
+            ansible-playbook -i inventories/setup.yml playbook.yml --vault-password-file /tmp/vault_pass
+            rm /tmp/vault_pass
